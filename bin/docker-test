@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to run tests in Docker with proper test environment
+
+docker-compose exec web env RAILS_ENV=test bundle exec rspec "$@"
