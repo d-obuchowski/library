@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+      .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+      .header { background-color: #f4f4f4; padding: 20px; text-align: center; }
+      .content { padding: 20px; background-color: #ffffff; }
+      .book-info { background-color: #f9f9f9; padding: 15px; margin: 20px 0; border-left: 4px solid #4CAF50; }
+      .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>📚 Reminder: Your Book is Due Soon</h1>
+      </div>
+      <div class="content">
+        <p>Hello <%= @reader.full_name %>,</p>
+        <p>This is a friendly reminder that the following book is due in <strong>3 days</strong>:</p>
+        <div class="book-info">
+          <h3><%= @book.title %></h3>
+          <p><strong>Author:</strong> <%= @book.author %></p>
+          <p><strong>Serial Number:</strong> <%= @book.serial_number %></p>
+          <p><strong>Borrowed on:</strong> <%= @borrowing.borrowed_at.strftime("%B %d, %Y") %></p>
+          <p><strong>Due date:</strong> <%= @due_date.strftime("%B %d, %Y") %></p>
+        </div>
+        <p>Please return the book by the due date to avoid any late fees.</p>
+        <p>Thank you for using our library!</p>
+      </div>
+      <div class="footer">
+        <p>This is an automated message from the Library System</p>
+      </div>
+    </div>
+  </body>
+</html>
