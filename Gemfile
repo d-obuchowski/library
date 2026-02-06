@@ -54,7 +54,7 @@ group :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "test-prof"
-  gem "shoulda-matchers", "~> 6.0"
+  gem "shoulda-matchers", "~> 7.0"
   gem "simplecov", require: false
 end
 
